@@ -1,6 +1,6 @@
 <h2>{{aBMain.menus[selMI].label}}</h2>
 <p>
-    metaboxes for the {{aBMain.menus[selMI].label}} post type. Add, edit, delete, sort meta boxes here.
+    Configure the {{aBMain.menus[selMI].label}} contents. Add, edit, delete, sort content containers & fields here.
 </p>
 <div class="row">
     <div class="col-sm-12">
@@ -13,27 +13,27 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="expand">
-                                            <button ng-click="isCollapsed = !isCollapsed" type="button" name="button" class="btn btn-default">
+                                            <button ng-click="isCollapsed = !isCollapsed" type="button" name="button" class="btn btn-default" ng-show="singleChild(aBMain.menus[selMI])">
                                                 <i ng-class="{'glyphicon-collapse-down':isCollapsed,'glyphicon-collapse-up':!isCollapsed}" class="glyphicon"></i>
                                             </button>
                                         </div>
                                         <div class="navigate">
-                                            <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'up')" class="btn btn-default" type="button" name="button">
+                                            <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'up')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
                                                 <i class="glyphicon glyphicon-arrow-up"></i>
                                             </button>
-                                            <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'down')" class="btn btn-default" type="button" name="button">
+                                            <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'down')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
                                                 <i class="glyphicon glyphicon-arrow-down"></i>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="aBLLabel">
-                                            {{mBox.label}}
+                                            {{dinamicLabel(aBMain.menus[selMI],mBox.label)}}
                                         </div>
                                     </div>
                                     <div class="col-sm-4 text-right">
                                         <div class="remove">
-                                            <button ng-click="removeMe(aBMain.menus[selMI].children,$index)" type="button" name="button" class="btn btn-default">
+                                            <button ng-click="removeMe(aBMain.menus[selMI].children,$index,aBMain.menus[selMI])" type="button" name="button" class="btn btn-default" ng-show="singleChild(aBMain.menus[selMI])">
                                                 <i class="glyphicon glyphicon-remove"></i>
                                             </button>
                                         </div>
@@ -92,7 +92,7 @@
                         <div class="fieldsContainer" ng-show="!mBoxSett">
 
                             <p>
-                                Fields in the metabox generated. Sort, add, delete, edit Fields here.
+                                Fields generated. Sort, add, delete, edit Fields here.
                             </p>
                             <!-- Fields START -->
                             <div class="field" ng-repeat="field in mBox.fields">
@@ -299,7 +299,7 @@
             </div>
         </div>
         <div class="text-center addMBButton">
-            <button ng-click="addMetabox(aBMain.menus[selMI].children)" class="btn btn-primary" type="button" name="button"> Add Metabox</button>
+            <button ng-click="addMetabox(aBMain.menus[selMI])" class="btn btn-primary" type="button" name="button"> Add {{metaboxText}}</button>
         </div>
     </div>
 </div>
