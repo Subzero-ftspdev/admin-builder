@@ -185,17 +185,15 @@
                             <button type="button" name="button" class="btn btn-primary" ng-click="aBAddOptionSize(field.tSizes)">Add Option</button>
                         </p>
                     </div>
+                    <!-- Custom Options END -->
                 </div>
-                <!-- Custom Options END -->
-
             </div>
         </div>
     </div>
-</div>
 
-<div class="text-center addField" ng-show="!mBoxSett">
-    <h4>Add Field:</h4>
-    <select name="addField" class="form-control" ng-model="fieldModel" ng-change="addField(mBox.fields,fieldModel)">
-        <option ng-repeat="fO in fieldOptions" value="{{fO.type}}">{{fO.label}}</option>
-    </select>
-</div>
+    <div class="text-center addField" ng-show="!mBoxSett">
+        <h4>Add Field:</h4>
+        <select name="addField" class="form-control" ng-model="fieldModel" ng-change="addField(mBox.fields,fieldModel)">
+            <option ng-repeat="fO in fieldOptions" value="{{fO.type}}">{{fO.label}}</option>
+        </select>
+    </div>
