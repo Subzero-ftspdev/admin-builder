@@ -20,38 +20,39 @@
         <button type="button" ng-click="aBImportJson(aBIE)" name="button" class="btn btn-primary">Import</button>
         <button type="button" ng-click="exportPHP()" name="button" class="btn btn-primary">Export File</button>
     </p>
-    <div id="phpExport">$lfp = new loadFromPlugin();
-      $lfp->load($theJson);
-// Check for plugin existance and activation
-include_once ABSPATH.'wp-admin/includes/plugin.php';
+    <div id="phpExport1">include_once ABSPATH.'wp-admin/includes/plugin.php';
 
-if (!is_plugin_active('admin-builder/admin-builder.php')) {
-    function sample_admin_notice__success()
-    {
-        $pluginInstalled = false;
-        if (!function_exists('get_plugins')) {
-            require_once ABSPATH.'wp-admin/includes/plugin.php';
-        }
-        $allPlugins = get_plugins();
-        foreach ($allPlugins as $key => $value) {
-            if ($key === 'admin-builder/admin_builder.php') {
-                $pluginInstalled = true;
+    if (!is_plugin_active('admin-builder/admin-builder.php')) {
+        function sample_admin_notice__success()
+        {
+            $pluginInstalled = false;
+            if (!function_exists('get_plugins')) {
+                require_once ABSPATH.'wp-admin/includes/plugin.php';
             }
-            # code...
-        }
-        if ($pluginInstalled) {
-            //check if plugin is activated:
-                    if (!is_plugin_active('admin-builder/admin_builder.php')) {
-                        $url = admin_url();
+            $allPlugins = get_plugins();
+            foreach ($allPlugins as $key => $value) {
+                if ($key === 'admin-builder/admin_builder.php') {
+                    $pluginInstalled = true;
+                }
+                # code...
+            }
+            if ($pluginInstalled) {
+                //check if plugin is activated:
+                        if (!is_plugin_active('admin-builder/admin_builder.php')) {
+                            $url = admin_url();
 
-                        echo '<div class="notice notice-error is-dismissible">';
-                        echo '<h3>Admin Builder Plugin is not ACTIVE!</h3>';
-                        echo '<p>';
-                        echo 'To get the full functionality , activate Admin Builder from the <a href="'.$url.'/plugins.php">plugins directory</a>.';
-                        echo '</p>';
-                        echo '</div>';
-  //plugin is activated
-                    }
+                            echo '<div class="notice notice-error is-dismissible">';
+                            echo '<h3>Admin Builder Plugin is not ACTIVE!</h3>';
+                            echo '<p>';
+                            echo 'To get the full functionality , activate Admin Builder from the <a href="'.$url.'/plugins.php">plugins directory</a>.';
+                            echo '</p>';
+                            echo '</div>';
+      //plugin is activated
+    }else{
+</div>
+<div id="phpExport2">
+}
+
         } else {
             echo '<div class="notice notice-error is-dismissible">';
             echo '<h3>Admin Builder Plugin is not installed!</h3>';
@@ -69,6 +70,5 @@ if (!is_plugin_active('admin-builder/admin-builder.php')) {
     }
     add_action('admin_notices', 'sample_admin_notice__success');
 }
-
 </div>
 <!-- Settings container END -->
