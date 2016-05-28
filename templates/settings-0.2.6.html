@@ -78,27 +78,6 @@
       }
       if(!$abError){
         if (!$abError) {
-            if (class_exists(loadFromPlugin)) {
-</div>
-<div id="phpExport2">
-}
-
-        } else {
-            echo '<div class="notice notice-error is-dismissible">';
-            echo '<h3>Admin Builder Plugin is not installed!</h3>';
-            echo '<p>';
-            echo 'To get the full functionality , install Admin Builder.';
-            echo '</p>';
-            echo '<p>';
-            $plugin_name = 'admin-builder';
-            $install_link = '<a href="'.esc_url(network_admin_url('plugin-install.php?tab=plugin-information&plugin='.$plugin_name.'&TB_iframe=true&width=600&height=550')).'" class="thickbox" title="More info about '.$plugin_name.'">Install '.$plugin_name.'</a>';
-
-            echo $install_link;
-            echo '</p>';
-            echo '</div>';
-        }
-    }
-    add_action('admin_notices', 'sample_admin_notice__success');
-}
+            if (class_exists('loadFromPlugin')) {
 </div>
 <!-- Settings container END -->
