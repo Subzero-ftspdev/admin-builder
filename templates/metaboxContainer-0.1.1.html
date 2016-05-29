@@ -65,12 +65,12 @@
                                 <!-- Name START -->
                                 <div class="input-group">
                                     <span class="input-group-addon" uib-tooltip="the unique name of the meta-box. Used behind the scenes.">Name</span>
-                                    <input ng-model="mBox.name" type="text" class="form-control" readonly placeholder="metabox Name" value="{{mBox.name}}" />
+                                    <input ng-model="mBox.name" type="text" class="form-control" placeholder="metabox Name" value="{{mBox.name}}" />
                                 </div>
                                 <!-- Name END -->
 
                                 <!-- Context START -->
-                                <div class="input-group">
+                                <div class="input-group" ng-show="aBMain.menus[selMI].type!='cPage'">
                                     <span class="input-group-addon" uib-tooltip="Where the metabox should be positioned on the page. Normal (under content tinyMCE) or side panel (the right).">Context</span>
                                     <select class="form-control" name="context" ng-model="mBox.context">
                                         <option ng-repeat="context in mBContext" value="{{context.value}}">{{context.label}}</option>
@@ -79,7 +79,7 @@
                                 <!-- Context END -->
 
                                 <!-- Priority START -->
-                                <div class="input-group">
+                                <div class="input-group" ng-show="aBMain.menus[selMI].type!='cPage'">
                                     <span class="input-group-addon" uib-tooltip="The importance (position wise) of the meta-box.">Priority</span>
                                     <select class="form-control" name="priority" ng-model="mBox.priority">
                                         <option ng-repeat="priority in mBPriority" value="{{priority.value}}">{{priority.label}}</option>
@@ -146,7 +146,7 @@
                                             <!-- Field Name START -->
                                             <div class="input-group">
                                                 <span class="input-group-addon" uib-tooltip="The unique name of the field.">Name</span>
-                                                <input ng-model="field.name" type="text" class="form-control" readonly placeholder="field Name" value="{{field.name}}" />
+                                                <input ng-model="field.name" type="text" class="form-control" placeholder="field Name" value="{{field.name}}" />
                                             </div>
                                             <!-- Field Name END -->
 
