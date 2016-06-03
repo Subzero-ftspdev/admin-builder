@@ -52,12 +52,7 @@
                                   echo '</p>';
                                   echo '</div>';
             //plugin is activated
-          }else{
-      $theJson = '{"menus":[{"label":"Posts","type":"post","name":"posts","unique":true,"children":[{"label":"Metabox1","name":"metabox1","context":"normal","priority":"default","fields":[{"name":"textbox1","type":"textbox","label":"TextBox1","description":"Default TextBox Description text","$$hashKey":"object:550"}],"$$hashKey":"object:477"}],"$$hashKey":"object:17"},{"label":"Pages","type":"page","name":"pages","unique":true,"children":[{"label":"Metabox1","name":"metabox1","context":"normal","priority":"high","fields":[{"name":"textbox1","type":"textbox","label":"TextBox1","description":"Default TextBox Description text","$$hashKey":"object:602"}],"$$hashKey":"object:529"}],"$$hashKey":"object:18"},{"label":"Admin Page1","type":"cPage","name":"cPage1","unique":false,"children":[{"label":"Tab1","name":"tab1","context":"normal","priority":"default","fields":[{"name":"textbox1","type":"textbox","label":"TextBox1","description":"Default TextBox Description text","$$hashKey":"object:335"},{"name":"textarea1","type":"textarea","label":"TextArea1","description":"Default TextArea Description text","$$hashKey":"object:446"},{"name":"select1","type":"select","label":"Select1","description":"Default Select Description text","selectType":"custom","oArr":[],"$$hashKey":"object:537"},{"name":"radio1","type":"radio","label":"Radio Buttons1","description":"Default Radio Buttons Description text","oArr":[],"radioType":"custom","orientation":"h","$$hashKey":"object:628"}],"$$hashKey":"object:75"}],"capability":"manage_options","handler":"ab_menu_handler1","pageTitle":"Test CPage","$$hashKey":"object:72","pageDescription":"HEre\'s some description. What you need to do here is listen. and listen good!"}]}';
-      $lfp = new loadFromPlugin();
-      $lfp->load($theJson);
-      }
-
+          }
               } else {
                 $abError = true;
                   echo '<div class="notice notice-error is-dismissible">';
