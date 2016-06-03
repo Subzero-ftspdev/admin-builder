@@ -40,9 +40,7 @@
                       # code...
                   }
                   if ($pluginInstalled) {
-                    if(isset($_GET['action']) && $_GET['action']==='install-plugin' && isset($_GET['plugin']) && $_GET['plugin']==='admin-builder'){
-                      return ;
-                    }
+                    ||if1||
                       //check if plugin is activated:
                               if (!is_plugin_active('admin-builder/admin_builder.php')) {
                                 $abError = true;
