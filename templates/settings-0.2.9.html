@@ -46,9 +46,9 @@
                                   $url = admin_url();
 
                                   echo '<div class="notice notice-error is-dismissible">';
-                                  echo '<h3>Admin Builder Plugin is not ACTIVE!</h3>';
+                                  echo '<h3>Step 3(final): Activate Admin Builder!</h3>';
                                   echo '<p>';
-                                  echo 'To get the full functionality , activate Admin Builder from the <a href="'.$url.'/plugins.php">plugins directory</a>.';
+                                  echo 'To get the full functionality , activate Admin Builder from the <a href="'.$url.'/plugins.php"><span class="button-primary">plugins directory</span></a>.';
                                   echo '</p>';
                                   echo '</div>';
             //plugin is activated
@@ -56,13 +56,13 @@
               } else {
                 $abError = true;
                   echo '<div class="notice notice-error is-dismissible">';
-                  echo '<h3>Admin Builder Plugin is not installed!</h3>';
+                  echo '<h3>Step 2: Install Admin Builder</h3>';
                   echo '<p>';
                   echo 'To get the full functionality , install Admin Builder.';
                   echo '</p>';
                   echo '<p>';
                   $plugin_name = 'admin-builder';
-                  $install_link = '<a href="'.esc_url(network_admin_url('plugin-install.php?tab=plugin-information&amp;plugin='.$plugin_name.'&amp;TB_iframe=true&amp;width=600&amp;height=550')).'" class="thickbox" title="More info about '.$plugin_name.'">Install '.$plugin_name.'</a>';
+                  $install_link = '<a href="'.esc_url(network_admin_url('plugin-install.php?tab=plugin-information&amp;plugin='.$plugin_name.'&amp;TB_iframe=true&amp;width=600&amp;height=550')).'" class="thickbox" title="More info about '.$plugin_name.'"><span class="button-primary">Install '.$plugin_name.'</span></a>';
 
                   echo $install_link;
                   echo '</p>';
