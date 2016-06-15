@@ -1,5 +1,5 @@
 <p>
-    Fields in the metabox generated. Sort, add, delete, edit Fields here.
+    Fields generated. Sort, add, delete, edit Fields here.
 </p>
 <!-- Fields START -->
 <div class="field" ng-repeat="field in mBox.fields">
@@ -95,6 +95,7 @@
                 </div>
                 <!-- Custom Options END -->
 
+
                 <!-- Custom Radio Buttons START -->
                 <div class="input-group" ng-show="showHideField(field,'custom','radioType');">
                     <span class="input-group-addon" uib-tooltip="The type of the select option.">Radio Labels and Values:</span>
@@ -113,7 +114,7 @@
                         </p>
                     </div>
                 </div>
-                <!-- Custom Options END -->
+                <!-- Custom Custom Radio Buttons END -->
 
                 <!-- Radio Buttons Orientation START -->
                 <div class="input-group" ng-show="showHideField(field,'radio');">
@@ -187,13 +188,12 @@
                     </div>
                     <!-- Custom Options END -->
                 </div>
+                <div class="hiddenCode">
+                    <a ng-click="codeCollapsed = !codeCollapsed" href="javascript:void(0)">Extract Value - Source Code <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <div class="fieldsContainer" uib-collapse="codeCollapsed">
+                        <textarea class="abCode" name="codeCollapseName" rows="1">{{putSource(aBMain.menus[selMI],mBox,field)}}</textarea>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="text-center addField" ng-show="!mBoxSett">
-        <h4>Add Field:</h4>
-        <select name="addField" class="form-control" ng-model="fieldModel" ng-change="addField(mBox.fields,fieldModel)">
-            <option ng-repeat="fO in fieldOptions" value="{{fO.type}}">{{fO.label}}</option>
-        </select>
     </div>
