@@ -1,3 +1,0 @@
-    var sloFunctions = function() {
-
-    };
