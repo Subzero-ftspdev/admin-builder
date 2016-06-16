@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="ss/style.min.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Shopping List One</title>
+</head>
+
+<body ng-app="slo">
+    <div class="container-fluid" ng-controller="mainCtrl as mC">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="header">
+                          <h2>Shopping list one</h2>
+                          <p>
+                            Create your shopping list, calculate totals
+                          </p>
+                        </div>
+                        <div class="cotent">
+                          <div class="products">
+                              <div class="row">
+                                <div class="col-xs-8">
+                                  Product Name
+                                </div>
+                                <div class="col-xs-2">
+                                  Quantity
+                                </div>
+                                <div class="col-xs-2">
+                                  Price
+                                </div>
+                              </div>
+                            <div class="row" ng-repeat="product in products">
+                              <div class="col-xs-8">
+                                <input type="text" name="name" class="input-group form-control" ng-model="product.name" value="" />
+                              </div>
+                              <div class="col-xs-2">
+                                <input type="text" name="name" class="input-group form-control" ng-change="calculate()" ng-model="product.quantity" value="" />
+                              </div>
+                              <div class="col-xs-2">
+                                <input type="text" name="name" class="input-group form-control" ng-change="calculate()" ng-model="product.price" value="" />
+                              </div>
+                            </div>
+                          </div>
+                          <p>
+                            <button type="button" class="button btn-primary" ng-click="addProduct();" name="button">Add Product</button>
+                          </p>
+                          <p>
+                            <h2>Total: {{total}} Ron</h2>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript " src="lib/angular.js "></script>
+    <script type="text/javascript " src="lib/ui-bootstrap-tpls-1.2.5.min.js"></script>
+    <script type="text/javascript " src="lib/angular-animate.js"></script>
+    <script type="text/javascript " src="lib/angular-cookies.min.js"></script>
+    <script type="text/javascript " src="lib/ngStorage.min.js"></script>
+    <script type="text/javascript " src="ss/script.min.js "></script>
+</body>
+
+</html>
