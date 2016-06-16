@@ -39,11 +39,14 @@
                               <div class="col-xs-6">
                                 <input type="text" name="name" class="input-group form-control" ng-change="calculate()" ng-model="product.name" value="" />
                               </div>
-                              <div class="col-xs-2">
+                              <div class="col-xs-2 quantity">
                                 <input type="text" name="name" class="input-group form-control" ng-change="calculate()" ng-model="product.quantity" size="1" value="" />
                               </div>
-                              <div class="col-xs-4">
+                              <div class="col-xs-2 price">
                                 <input type="text" name="name" class="input-group form-control" ng-change="calculate()" ng-model="product.price" size="5" value="" />
+                              </div>
+                              <div class="col-xs-2">
+                                <button type="button" class="btn btn-default" ng-click="remove(product)" name="button">X</button>
                               </div>
                             </div>
                           </div>
