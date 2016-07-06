@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="lib/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="ss/style.min.css" media="screen" title="no title" charset="utf-8">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Admin Builder</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="lib/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="ss/style.min.css" media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Admin Builder</title>
+    </head>
 
-<body ng-app="aBMain" class="aB">
-  <div class="container container-fluid">
-    <div class="row" ng-controller="mainCtrl as mC">
-      <div class="col-md-12">
-        <div class="header row" ng-include="'templates/header.html'">
+    <body ng-app="aBMain" class="aB">
+        <div class="container container-fluid">
+            <div class="row" ng-controller="mainCtrl as mC">
+                <div class="col-md-12">
+                    <div class="header row" ng-include="'templates/header.html'">
+                    </div>
+                    <uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
+                    <ng-include class="content row" src="this.contentTemplate"></ng-include>
+                </div>
+            </div>
         </div>
-        <uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
-        <ng-include class="content row" src="this.contentTemplate">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Google analytics code start -->
-  <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        <!-- Google analytics code start -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-61060552-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <!-- Google analytics code END -->
+            ga('create', 'UA-61060552-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <!-- Google analytics code END -->
 
 
-  <script type="text/javascript " src="lib/angular.js "></script>
-  <script type="text/javascript " src="lib/ui-bootstrap-tpls-1.2.5.min.js"></script>
-  <script type="text/javascript " src="lib/angular-animate.js"></script>
-  <script type="text/javascript " src="lib/angular-cookies.min.js"></script>
-  <script type="text/javascript " src="lib/ngStorage.min.js"></script>
-  <script type="text/javascript " src="ss/script.min.js "></script>
-</body>
+        <script type="text/javascript" src="lib/angular.js"></script>
+        <script type="text/javascript" src="lib/ui-bootstrap-tpls-1.2.5.min.js"></script>
+        <script type="text/javascript" src="lib/angular-animate.js"></script>
+        <script type="text/javascript" src="lib/angular-cookies.min.js"></script>
+        <script type="text/javascript" src="lib/ngStorage.min.js"></script>
+        <script type="text/javascript" src="ss/script.min.js"></script>
+    </body>
 </html>
