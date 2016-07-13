@@ -1,0 +1,79 @@
+<uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
+<!-- Settings container START -->
+<div class="col-md-12 aBSettings">
+    <h3>General Settings</h3>
+    <p>
+        Clead all your saved settings. Empty everything:
+    </p>
+    <p>
+        <button type="button" ng-click="aBClear()" name="button" class="btn btn-primary">Clear Everything</button> - WARNING! This removes all your saved settings.
+    </p>
+    <p>
+        Import and export your configured settings here:
+        <br/>
+        <button type="button" ng-click="aBImportJson(aBIE)" name="button" class="btn btn-primary">Import</button>
+
+    </p>
+    <!-- Label START -->
+    <div class="input-group">
+        <span class="input-group-addon" tooltip-placement="bottom" uib-tooltip="Paste json in here to import, Select and copy to export.">Import/Export <br/> (text)</span>
+        <textarea ng-model="aBIE" name="name" rows="8" class="form-control"></textarea>
+    </div>
+
+    <p>
+        <button type="button" ng-click="exportPHP()" name="button" class="btn btn-primary">Export File</button> - Works best in Google Chrome (in safari you need to save the file , in Firefox it does not work)
+    </p>
+    <h3>Choose what to Export For:</h3>
+    <!-- Label END -->
+    <p>
+        <label class="radio-inline">
+            <input type="radio" ng-model="exportType"id="radioPlugin" value="plugin"> Plugin
+        </label>
+        <label class="radio-inline">
+            <input type="radio" ng-model="exportType"id="radioTheme" value="theme"> Theme
+        </label>
+    </p>
+    <h2>How to use: (2 steps)</h2>
+
+    <div uib-collapse="!varHasValue(exportType,'plugin')">
+
+        <p>
+            <ol>
+                <li>Export and place the abExport.php file in your plugin directory.</li>
+                <li>Add the following code to the top of your plugin, just after the plugin information comment. After the */
+                    <br/>
+                    <pre>
+                if (!function_exists('get_plugins')) {
+
+                   require_once ABSPATH.'wp-admin/includes/plugin.php';
+               }
+               $plugin_folder = get_plugins('/'.plugin_basename(dirname(__FILE__)));
+               $plugin_file = basename((__FILE__));
+
+               require_once 'abExport.php';</pre></b>
+            </ol>
+        </p>
+        <p>
+            That's it, Everything else is done by the plugin.
+        </p>
+    </div>
+
+    <div uib-collapse="!varHasValue(exportType,'theme')">
+
+        <p>
+            <ol>
+                <li>Export and place the abExport.php file in your theme directory.</li>
+                <li>Add the following code to the top of your functions.php, This should be the first source code in that file.
+                    <br/>
+                    <pre>
+                      require_once 'abExport.php';</pre></b>
+            </ol>
+        </p>
+        <p>
+            That's it, Everything else is done by the plugin.
+        </p>
+    </div>
+
+
+    <div id="phpExport1"></div>
+    <!-- Settings container END -->
