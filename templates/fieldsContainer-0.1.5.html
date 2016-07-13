@@ -16,10 +16,10 @@
                                     </button>
                                 </div>
                                 <div class="navigate">
-                                    <button ng-click="movePosition(mBox.fields, $index, 'up')" class="btn btn-default" type="button" name="button">
+                                    <button ng-click="movePosition(mBox.fields,$index,'up')" class="btn btn-default" type="button" name="button">
                                         <i class="glyphicon glyphicon-arrow-up"></i>
                                     </button>
-                                    <button ng-click="movePosition(mBox.fields, $index, 'down')" class="btn btn-default" type="button" name="button">
+                                    <button ng-click="movePosition(mBox.fields,$index,'down')" class="btn btn-default" type="button" name="button">
                                         <i class="glyphicon glyphicon-arrow-down"></i>
                                     </button>
                                 </div>
@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-sm-4 text-right">
                                 <div class="remove">
-                                    <button ng-click="removeMe(mBox.fields, $index)" type="button" name="button" class="btn btn-default">
+                                    <button ng-click="removeMe(mBox.fields,$index)" type="button" name="button" class="btn btn-default">
                                         <i class="glyphicon glyphicon-remove"></i>
                                     </button>
                                 </div>
@@ -47,7 +47,7 @@
 
                 <!-- Label START -->
                 <div class="input-group">
-                    <span class="input-group-addon" uib-tooltip="The text label of the field.">Label</span> 
+                    <span class="input-group-addon" uib-tooltip="The text label of the field.">Label</span>
                     <input ng-model="field.label" type="text" class="form-control" placeholder="field Label" value="{{field.label}}" />
                 </div>
                 <!-- Label END -->
@@ -67,7 +67,7 @@
                 <!-- field Description END -->
 
                 <!-- select type START -->
-                <div class="input-group" ng-show="showHideField(field, 'select');">
+                <div class="input-group" ng-show="showHideField(field,'select');">
                     <span class="input-group-addon" uib-tooltip="The type of the select option.">Select Type:</span>
                     <select ng-model="field.selectType" class="form-control" placeholder="selectType">
                         <option ng-repeat="sType in selectTypes" value="{{sType.value}}">{{sType.label}}</option>
@@ -76,7 +76,7 @@
                 <!-- select type END -->
 
                 <!-- Custom Options START -->
-                <div class="input-group" ng-show="showHideField(field, 'custom', 'selectType');">
+                <div class="input-group" ng-show="showHideField(field,'custom','selectType');">
                     <span class="input-group-addon" uib-tooltip="Custom value and labels:">Dynamic Values:</span>
                     <div class="form-control flexibleHeight">
                         <p class="newVal" ng-repeat="cV in field.oArr">
@@ -84,40 +84,20 @@
                             Value:
                             <input type="text" ng-model="cV.value" name="cV.value" value="{{cV.value}}" /> Label:
                             <input type="text" ng-model="cV.label" name="cV.label" value="{{cV.label}}" />
-                            <button type="button" name="button" ng-click="removeMe(field.oArr, $index)">
+                            <button type="button" name="button" ng-click="removeMe(field.oArr,$index)">
                                 <i class="glyphicon glyphicon-remove"></i>
                             </button>
                         </p>
                         <p>
-                            <button type="button" name="button" class="btn btn-primary" ng-click="aBAddOption(field.oArr, 2)">Add Option</button>
+                            <button type="button" name="button" class="btn btn-primary" ng-click="aBAddOption(field.oArr,2)">Add Option</button>
                         </p>
                     </div>
                 </div>
                 <!-- Custom Options END -->
 
-                <!-- dynamic textboxes START -->
-                <div class="input-group" ng-show="showHideField(field, 'textboxesDynamic', 'type');">
-                    <span class="input-group-addon" uib-tooltip="Custom value and labels:">Dynamic Textboxes</span>
-                    <div class="form-control flexibleHeight">
-                        <p class="newVal" ng-repeat="cV in field.oArr">
-                            <!-- cV stands for custom Value-->
-                            Value:
-                            <input type="text" ng-model="cV.value" name="cV.value" value="{{cV.value}}" /> Label:
-                            <input type="text" ng-model="cV.label" name="cV.label" value="{{cV.label}}" />
-                            <button type="button" name="button" ng-click="removeMe(field.oArr, $index)">
-                                <i class="glyphicon glyphicon-remove"></i>
-                            </button>
-                        </p>
-                        <p>
-                            <button type="button" name="button" class="btn btn-primary" ng-click="aBAddOption(field.oArr, 2)">Add Textbox</button>
-                        </p>
-                    </div>
-                </div>
-                <!-- dynamic textboxes END -->
-
 
                 <!-- Custom Radio Buttons START -->
-                <div class="input-group" ng-show="showHideField(field, 'custom', 'radioType');">
+                <div class="input-group" ng-show="showHideField(field,'custom','radioType');">
                     <span class="input-group-addon" uib-tooltip="The type of the select option.">Radio Labels and Values:</span>
                     <div class="form-control flexibleHeight">
                         <p class="newVal" ng-repeat="cV in field.oArr">
@@ -125,19 +105,19 @@
                             Value:
                             <input type="text" ng-model="cV.value" name="cV.value" value="{{cV.value}}" /> Label:
                             <input type="text" ng-model="cV.label" name="cV.label" value="{{cV.label}}" />
-                            <button type="button" name="button" ng-click="removeMe(field.oArr, $index)">
+                            <button type="button" name="button" ng-click="removeMe(field.oArr,$index)">
                                 <i class="glyphicon glyphicon-remove"></i>
                             </button>
                         </p>
                         <p>
-                            <button type="button" name="button" class="btn btn-primary" ng-click="aBAddOption(field.oArr, 2)">Add Option</button>
+                            <button type="button" name="button" class="btn btn-primary" ng-click="aBAddOption(field.oArr,2)">Add Option</button>
                         </p>
                     </div>
                 </div>
                 <!-- Custom Custom Radio Buttons END -->
 
                 <!-- Radio Buttons Orientation START -->
-                <div class="input-group" ng-show="showHideField(field, 'radio');">
+                <div class="input-group" ng-show="showHideField(field,'radio');">
                     <span class="input-group-addon" uib-tooltip="The way that the radio buttons are shown">Radio Buttons Orientation:</span>
                     <select ng-model="field.orientation" class="form-control" placeholder="orientation">
                         <option ng-repeat="orientation in radioOrientation" value="{{orientation.value}}">{{orientation.label}}</option>
@@ -147,14 +127,14 @@
 
 
                 <!-- Checkbox text START -->
-                <div class="input-group" ng-show="showHideField(field, 'checkbox');">
+                <div class="input-group" ng-show="showHideField(field,'checkbox');">
                     <span class="input-group-addon" uib-tooltip="The text label of the field.">Checkbox Text</span>
                     <input ng-model="field.extraText" type="text" class="form-control" placeholder="Checkbox Text" value="{{field.extraText}}" />
                 </div>
                 <!-- Checkbox text END -->
 
                 <!-- datepicker format START -->
-                <div class="input-group" ng-show="showHideField(field, 'datepicker');">
+                <div class="input-group" ng-show="showHideField(field,'datepicker');">
                     <span class="input-group-addon" uib-tooltip="The date format of the field">Date Format:</span>
                     <select ng-model="field.format" class="form-control" placeholder="dateFormat">
                         <option ng-repeat="format in dateFormats" value="{{format.value}}">{{format.label}}</option>
@@ -163,7 +143,7 @@
                 <!-- datepicker format END -->
 
                 <!-- timepicker format START -->
-                <div class="input-group" ng-show="showHideField(field, 'timepicker');">
+                <div class="input-group" ng-show="showHideField(field,'timepicker');">
                     <span class="input-group-addon" uib-tooltip="The date format of the field">Time Format:</span>
                     <select ng-model="field.format" class="form-control" placeholder="Date Format">
                         <option ng-repeat="format in timeFormats" value="{{format.value}}">{{format.label}}</option>
@@ -172,7 +152,7 @@
                 <!-- timepicker format END -->
 
                 <!-- colorpicker format START -->
-                <div class="input-group" ng-show="showHideField(field, 'colorpicker');">
+                <div class="input-group" ng-show="showHideField(field,'colorpicker');">
                     <span class="input-group-addon" uib-tooltip="The date format of the field">Color Codes format:</span>
                     <select ng-model="field.format" class="form-control" placeholder="Date Format">
                         <option ng-repeat="format in colorFormats" value="{{format.value}}">{{format.label}}</option>
@@ -181,7 +161,7 @@
                 <!-- colorpicker format END -->
 
                 <!-- colorpicker opacity checkbox START -->
-                <div class="input-group" ng-show="showHideField(field, 'colorpicker');">
+                <div class="input-group" ng-show="showHideField(field,'colorpicker');">
                     <span class="input-group-addon" uib-tooltip="The text label of the field.">Opacity</span>
                     <div class="form-control">
                         <input ng-model="field.opacity" type="checkbox" value="{{field.opacity}}" class="form-control" placeholder="field Label"> Should the user be able to modify the opacity of the color?
@@ -190,7 +170,7 @@
                 <!-- colorpicker opacity checkbox END -->
 
                 <!-- Custom Options START -->
-                <div class="input-group" ng-show="showHideField(field, 'upload2');">
+                <div class="input-group" ng-show="showHideField(field,'upload2');">
                     <span class="input-group-addon" uib-tooltip="Add dynamic thumbnail sizes for images. Thumbnails will be given for the dimensions you are giving here.">Thumbnails:</span>
                     <div class="form-control flexibleHeight">
                         <p class="newVal" ng-repeat="size in field.tSizes">
@@ -198,7 +178,7 @@
                             Width(px):
                             <input type="number" ng-model="size.width" name="size.width" value="{{size.width}}" /> Height(px):
                             <input type="number" ng-model="size.height" name="size.height" value="{{size.height}}" />
-                            <button type="button" name="button" ng-click="removeMe(field.tSizes, $index)">
+                            <button type="button" name="button" ng-click="removeMe(field.tSizes,$index)">
                                 <i class="glyphicon glyphicon-remove"></i>
                             </button>
                         </p>
@@ -211,7 +191,7 @@
                 <div class="hiddenCode">
                     <a ng-click="codeCollapsed = !codeCollapsed" href="javascript:void(0)">Extract Value - Source Code <i class="glyphicon glyphicon-chevron-down"></i></a>
                     <div class="fieldsContainer" uib-collapse="codeCollapsed">
-                        <textarea class="abCode" name="codeCollapseName" rows="1">{{putSource(aBMain.menus[selMI], mBox, field)}}</textarea>
+                        <textarea class="abCode" name="codeCollapseName" rows="1">{{putSource(aBMain.menus[selMI],mBox,field)}}</textarea>
                     </div>
                 </div>
             </div>
