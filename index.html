@@ -14,7 +14,6 @@
                 <div class="col-md-12">
                     <div class="header row" ng-include="'templates/header.html'">
                     </div>
-                    <uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
                     <ng-include class="content row" src="this.contentTemplate"></ng-include>
                 </div>
             </div>
