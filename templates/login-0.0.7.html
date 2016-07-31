@@ -1,0 +1,21 @@
+<uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
+<div class="col-md-12 text-center">
+  <h2>Login to Admin Builder</h2>
+    <div class="mainBox">
+        <p>
+            <label for="basic-url">Email</label>
+            <input type="text" name="loginEmail" ng-model="lEmail" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" />
+        </p>
+        <p>
+            <label for="basic-url">Password</label>
+            <input type="password" name="loginPassword" ng-model="lPassword" class="form-control" id="basic-url" aria-describedby="basic-addon3"  autocomplete="off" />
+        </p>
+
+        <p>
+            <button type="button" name="button"  ng-click="abLogin()">Login</button>
+        </p>
+        <p>
+          Don't have an account? <a href="#" ng-click="abRegLogSwitch('register')">Register here</a>
+        </p>
+    </div>
+</div>

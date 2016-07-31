@@ -1,3 +1,4 @@
+<uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
 <div class="col-md-12">
     <!--  EDITOR CONTENT START-->
     <div class="row" ng-show="!sShow">

@@ -12,7 +12,7 @@
         <div class="container container-fluid">
             <div class="row" ng-controller="mainCtrl as mC">
                 <div class="col-md-12">
-                    <div class="header row" ng-include="'templates/header.html'">
+                    <div class="header row" ng-include="this.headerTemplate">
                     </div>
                     <ng-include class="content row" src="this.contentTemplate"></ng-include>
                 </div>
