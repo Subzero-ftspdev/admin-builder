@@ -1,0 +1,40 @@
+<uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
+<div class="col-md-12 text-center">
+    <h2>Register to Admin Builder</h2>
+    <div class="mainBox">
+        <form name="registerForm" novalidate>
+            <p>
+                <label for="basic-url">Email</label>
+                <input type="text" name="lEmail" ng-enter="abRegister()" ng-change="changeValidity(registerForm.lEmail)" ng-model="lEmail" ng-pattern="regexMail" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" placeholder="Your email address">
+            </p>
+            <p>
+                <label for="basic-url">Password</label>
+                <input type="password" name="lPassword" ng-enter="abRegister()" ng-model="lPassword" ng-pattern="regexPass" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-change="validatePass()" placeholder="Strong Password" autocomplete="off"/>
+            </p <p>
+            <label for="basic-url">Password (again)</label>
+            <input type="password" name="lPassword2" ng-enter="abRegister()" ng-model="lPassword2" ng-pattern="regexPass" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-change="validatePass()" placeholder="Repeat Password" autocomplete="off"/>
+            </p>
+            <div class="strongPassword" ng-show="strongPassword">
+                <h4>Strong Password:</h4>
+                <p class="alerts alert ng-isolate-scope alert-success">
+                    {{strongPassword}}
+                </p>
+            </div>
+            <p>
+                <button type="button" ng-click="generatePassword()" class="btn btn-default" name="button">Generate STRONG password</button>
+            </p>
+
+            <p>
+                <button type="button" class="btn btn-primary" name="button" ng-click="abRegister()">Register</button>
+            </p>
+            <p>
+                <a href="#" ng-click="abRegLogSwitch('login')">Go back to Login</a>
+            </p>
+        </form>
+
+
+    </div>
+    <p>
+        {{testResponse}}
+    </p>
+</div>
