@@ -8,10 +8,11 @@
         <title>Admin Builder</title>
         <meta name="google-site-verification" content="-zPorRaTHg6rjX6ObU8evfiG-TAA3xZlFbwzHkdRKGs" />
     </head>
-
     <body ng-app="aBMain" class="aB">
         <div class="container container-fluid">
             <div class="row" ng-controller="mainCtrl as mC">
+              <uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
+              
                 <div class="col-md-12">
                     <div class="header row" ng-include="this.headerTemplate">
                     </div>
