@@ -1,6 +1,11 @@
 <!-- Settings container START -->
 <div class="col-md-12 aBSettings">
     <h3>General Settings</h3>
+    <p ng-hide="projectID">
+      Please Open or create a project in order to Export anything.
+    </p>
+    <div class=""  ng-show="projectID">
+
     <p>
         Clead all your saved settings. Empty everything:
     </p>
@@ -8,8 +13,9 @@
         <button type="button" ng-click="aBClear()" name="button" class="btn btn-primary">Clear Everything</button> - WARNING! This removes all your saved settings.
     </p>
     <p>
-        <button type="button" ng-click="exportPHP()" name="button" class="btn btn-primary">Export File</button> - Works best in Google Chrome (in safari you need to save the file , in Firefox it does not work)
+        <button ng-show="projectID" type="button" ng-click="exportPHP()" name="button" class="btn btn-primary">Export File</button>
     </p>
+
     <h3>Choose what to Export For:</h3>
     <!-- Label END -->
     <p>
@@ -64,3 +70,5 @@
 
     <div id="phpExport1"></div>
     <!-- Settings container END -->
+  </div>
+</div>
