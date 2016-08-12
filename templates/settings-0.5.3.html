@@ -1,31 +1,27 @@
 <!-- Settings container START -->
 <div class="col-md-12 aBSettings">
-    <h3>General Settings</h3>
+    <h3>Export Settings</h3>
     <p ng-hide="projectID">
       Please Open or create a project in order to Export anything.
     </p>
     <div class=""  ng-show="projectID">
+      <h4 class="text-center">Choose what to Export For:</h4>
+      <!-- Label END -->
+      <p class="text-center">
+          <label class="radio-inline">
+              <input type="radio" ng-model="exportType" id="radioPlugin" value="plugin"> Plugin
+          </label>
+          <label class="radio-inline">
+              <input type="radio" ng-model="exportType" id="radioTheme" value="theme"> Theme
+          </label>
+      </p>
 
-    <p>
-        Clead all your saved settings. Empty everything:
-    </p>
-    <p>
-        <button type="button" ng-click="aBClear()" name="button" class="btn btn-primary">Clear Everything</button> - WARNING! This removes all your saved settings.
-    </p>
-    <p>
-        <button ng-show="projectID" type="button" ng-click="exportPHP()" name="button" class="btn btn-primary">Export File</button>
+
+    <p class="text-center">
+        <button ng-show="projectID" type="button" ng-click="exportPHP()" name="button" class="btn btn-primary btn-lg">Export</button>
     </p>
 
-    <h3>Choose what to Export For:</h3>
-    <!-- Label END -->
-    <p>
-        <label class="radio-inline">
-            <input type="radio" ng-model="exportType" id="radioPlugin" value="plugin"> Plugin
-        </label>
-        <label class="radio-inline">
-            <input type="radio" ng-model="exportType" id="radioTheme" value="theme"> Theme
-        </label>
-    </p>
+
     <h2>How to use: (2 steps)</h2>
 
     <div uib-collapse="!varHasValue(exportType,'plugin')">
@@ -70,5 +66,12 @@
 
     <div id="phpExport1"></div>
     <!-- Settings container END -->
+    <h3>Extra Options</h3>
+    <p>
+        Clead all your saved settings. Empty everything:
+    </p>
+    <p>
+        <button type="button" ng-click="aBClear()" name="button" class="btn btn-primary">Clear Everything</button> - WARNING! This removes all your saved settings from your current project and sets everything to default with 0 settings.
+    </p>
   </div>
 </div>
