@@ -20,8 +20,15 @@
                 </div>
                 <ng-include class="content row" src="this.contentTemplate"></ng-include>
             </div>
+            <div ng-show="loadingOverlay" class="loadingOverlay">
+              <div class="midC">
+                Loading... <img src="img/ajax-loader.gif" alt="Loading gif" />
+
+              </div>
+            </div>
         </div>
     </div>
+
     <!-- Google analytics code start -->
     <script>
         (function(i, s, o, g, r, a, m) {
