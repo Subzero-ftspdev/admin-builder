@@ -13,9 +13,9 @@
             <label for="basic-url">Password (again)</label>
             <input type="password" name="lPassword2" ng-enter="abRegister()" ng-model="lPassword2" ng-pattern="regexPass" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-change="validatePass()" placeholder="Repeat Password" autocomplete="off"/>
             </p>
-            <div class="strongPassword" ng-show="strongPassword">
+            <div class="strongPassword" ng-show="strongPassword!=''">
                 <h4>Strong Password:</h4>
-                <p class="alerts alert ng-isolate-scope alert-success">
+                <p class="spView ng-isolate-scope alert-success">
                     {{strongPassword}}
                 </p>
             </div>
