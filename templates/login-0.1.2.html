@@ -1,10 +1,10 @@
 <div class="col-md-12 text-center">
   <h2>Login to Admin Builder</h2>
-   <form name="loginForm"> 
+   <form name="loginForm">
 	<div class="mainBox">
        		<p>
             		<label for="basic-url">Email</label>
-            		<input type="text" ng-pattern="regexMail" ng-change="changeValidity(loginForm.loginEmail)"" name="loginEmail" ng-model="lEmail" ng-enter="abLogin()" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" />
+            		<input type="text" ng-pattern="regexMail" ng-change="changeValidity(loginForm.loginEmail)" name="loginEmail" ng-model="lEmail" ng-enter="abLogin()" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" />
         	</p>
         	<p>
             		<label for="basic-url">Password</label>
@@ -12,14 +12,16 @@
         	</p>
 
         	<p>
-            		<button type="button" name="button"  ng-click="abLogin()">Login</button>
+            		<button type="button" name="button" class="btn btn-primary"  ng-click="abLogin()">Login</button>
         	</p>
         	<p>
-          		Forgot Your password? <a href="#" ng-click="abRegLogSwitch('resetPass')">Reset Password</a><br/>
+          		Forgot Your password?<br/> <b><a href="#" ng-click="abRegLogSwitch('resetPass')">Reset Password</a></b>
         	</p>
 
         	<p>
-	          Don't have an account? <a href="#" ng-click="abRegLogSwitch('register')">Register here</a>
+	          Don't have an account? <br/>
+            <button type="button" class="btn btn-info" name="button" ng-click="abRegLogSwitch('register')">Register</button>
+
         	</p>
 	    </div>
 	</form>
