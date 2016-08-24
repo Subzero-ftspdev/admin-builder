@@ -1,24 +1,26 @@
 <div class="col-md-12 text-center">
   <h2>Login to Admin Builder</h2>
-    <div class="mainBox">
-        <p>
-            <label for="basic-url">Email</label>
-            <input type="text" name="loginEmail" ng-model="lEmail" ng-enter="abLogin()" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" />
-        </p>
-        <p>
-            <label for="basic-url">Password</label>
-            <input type="password" name="loginPassword" ng-enter="abLogin()" ng-model="lPassword" class="form-control" id="basic-url" aria-describedby="basic-addon3"  autocomplete="off" />
-        </p>
+   <form name="loginForm"> 
+	<div class="mainBox">
+       		<p>
+            		<label for="basic-url">Email</label>
+            		<input type="text" ng-pattern="regexMail" ng-change="changeValidity(loginForm.loginEmail)"" name="loginEmail" ng-model="lEmail" ng-enter="abLogin()" class="form-control" id="basic-url" aria-describedby="basic-addon3" autocomplete="off" />
+        	</p>
+        	<p>
+            		<label for="basic-url">Password</label>
+            		<input type="password" name="loginPassword" ng-pattern="regexPass" ng-change="changeValidity(loginForm.loginPassword)" ng-enter="abLogin()" ng-model="lPassword" class="form-control" id="basic-url" aria-describedby="basic-addon3"  autocomplete="off" />
+        	</p>
 
-        <p>
-            <button type="button" name="button"  ng-click="abLogin()">Login</button>
-        </p>
-        <p>
-          Forgot Your password? <a href="#" ng-click="abRegLogSwitch('resetPass')">Reset Password</a><br/>
-        </p>
+        	<p>
+            		<button type="button" name="button"  ng-click="abLogin()">Login</button>
+        	</p>
+        	<p>
+          		Forgot Your password? <a href="#" ng-click="abRegLogSwitch('resetPass')">Reset Password</a><br/>
+        	</p>
 
-        <p>
-          Don't have an account? <a href="#" ng-click="abRegLogSwitch('register')">Register here</a>
-        </p>
-    </div>
+        	<p>
+	          Don't have an account? <a href="#" ng-click="abRegLogSwitch('register')">Register here</a>
+        	</p>
+	    </div>
+	</form>
 </div>
