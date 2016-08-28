@@ -4,28 +4,53 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="lib/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="lib/sweetalert.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="ss/style.min.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Admin Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="-zPorRaTHg6rjX6ObU8evfiG-TAA3xZlFbwzHkdRKGs" />
 </head>
 
 <body ng-app="aBMain" class="aB">
     <div class="container container-fluid">
         <div class="row" ng-controller="mainCtrl as mC">
-            <uib-alert class="alerts" ng-repeat="alert in alerts" dismiss-on-timeout="{{alert.timeout}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</uib-alert>
-
             <div class="col-md-12">
-                <div class="header row" ng-include="this.headerTemplate">
+              <!-- HEADER START -->
+                <div class="header row" ng-show="vHeader">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <button type="button" ng-click="saveSettings()" name="button" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Save </button>
+                                <button class="btn btn-default" ng-click="abGoTo('/projects')" type="button"><i class="glyphicon glyphicon-open"></i> Open</button>
+                                <button class="settingsButton btn btn-default" ng-class="{active: eShow}" ng-click="contentSwitch(true)" type="button"><i class="glyphicon glyphicon-export"></i>Export</button>
+                            </div>
+                            <div class="col-sm-5 text-center">
+                                <span class="mainTitle">Admin Builder</span> <span class="version">v 0.4</span>
+                            </div>
+                            <div class=" col-sm-4 text-right">
+                              <!-- <button class="settingsButton btn btn-default" ng-class="{active: sShow}" ng-click="contentSwitch(true)" type="button"><i class="glyphicon glyphicon-cog"></i>Settings</button> -->
+                                <button class="settingsButton btn btn-default" ng-click="logOut()" type="button"><i class="glyphicon glyphicon-off"></i> Log Out</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <ng-include class="content row" src="this.contentTemplate"></ng-include>
-            </div>
-            <div ng-show="loadingOverlay" class="loadingOverlay">
-              <div class="midC">
-                Loading... <img src="img/ajax-loader.gif" alt="Loading gif" />
+                <!-- HEADER END -->
 
-              </div>
+                <div ng-view class="mainContainer content"></div>
+
             </div>
+            <!-- PRELOADING OVERLAY START -->
+            <div ng-show="loadingOverlay" class="loadingOverlay">
+                <div class="midC">
+                    Loading... <img src="img/ajax-loader.gif" alt="Loading gif" />
+
+                </div>
+            </div>
+            <!-- PRELOADING OVERLAY END -->
+
+
+
         </div>
     </div>
 
@@ -49,10 +74,13 @@
     <!-- Google analytics code END -->
 
     <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
+
     <script type="text/javascript" src="lib/ui-bootstrap-tpls-1.2.5.min.js"></script>
     <script type="text/javascript" src="lib/angular-animate.js"></script>
     <script type="text/javascript" src="lib/angular-cookies.min.js"></script>
     <script type="text/javascript" src="lib/ngStorage.min.js"></script>
+    <script type="text/javascript" src="lib/sweetalert.min.js"></script>
     <script type="text/javascript" src="ss/script.min.js"></script>
 </body>
 
