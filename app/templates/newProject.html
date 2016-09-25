@@ -9,7 +9,7 @@
 
             <div class="input-group text-center">
                 <h4 uib-tooltip="(string) (Required) The name of the prokect">Project Name</h4>
-                <input type="text" ng-model="newProjectName" name="newProjectName" class="form-control" />
+                <input type="text" ng-model="newProjectName" ng-enter="createNewProject()" name="newProjectName" class="form-control" />
             </div>
             <br/>
             <div class="input-group text-center">
