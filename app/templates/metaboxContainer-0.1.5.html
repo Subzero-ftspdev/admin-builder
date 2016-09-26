@@ -3,35 +3,20 @@
     Configure the {{aBMain.menus[selMI].label}} contents. Add, edit, delete, sort content containers & fields here.
 </p>
 <div class="row">
-    <div class="col-sm-12">
-        <div class="row metabox" ng-repeat="mBox in aBMain.menus[selMI].children">
-            <div class="col-sm-12">
+    <div class="col-sm-12 ">
+        <div class="row metabox " ng-repeat="mBox in aBMain.menus[selMI].children">
+            <div class="col-sm-12 ">
                 <div>
-                    <div class="mBoxHeader">
+                    <div class="mBoxHeader expandIcon" ng-click="isCollapsed = !isCollapsed">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-12 ">
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="expand">
-                                            <button ng-click="isCollapsed = !isCollapsed" type="button" name="button" class="btn btn-default" ng-show="singleChild(aBMain.menus[selMI])">
-                                                <i ng-class="{'glyphicon-collapse-down':isCollapsed,'glyphicon-collapse-up':!isCollapsed}" class="glyphicon"></i>
-                                            </button>
-                                        </div>
-                                        <div class="navigate">
-                                            <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'up')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
-                                                <i class="glyphicon glyphicon-arrow-up"></i>
-                                            </button>
-                                            <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'down')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
-                                                <i class="glyphicon glyphicon-arrow-down"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-11  text-center">
                                         <div class="aBLLabel">
                                             {{dinamicLabel(aBMain.menus[selMI],mBox.label)}}
                                         </div>
                                     </div>
-                                    <div class="col-sm-4 text-right">
+                                    <div class="col-sm-1 text-right">
                                         <div class="remove">
                                             <button ng-click="removeMe(aBMain.menus[selMI].children,$index,aBMain.menus[selMI])" type="button" name="button" class="btn btn-default" ng-show="singleChild(aBMain.menus[selMI])">
                                                 <i class="glyphicon glyphicon-remove"></i>
@@ -44,12 +29,23 @@
                     </div>
                     <div class="mBoxBody" uib-collapse="isCollapsed">
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-3">
                                 <h2 ng-show="!mBoxSett" class="fieldsGTitle">Dynamic fields:</h2>
                                 <h2 ng-show="mBoxSett" class="fieldsGTitle">Edit Settings:</h2>
                             </div>
-                            <div class="col-sm-2">
-                                <button ng-show="mboxFields" type="button" name="button" ng-click="mBoxSett = !mBoxSett" ng-class="{'btn-default':!mBoxSett,'btn-primary':mBoxSett}" class="btn btn-block">Edit</button>
+                            <div class="col-sm-5 text-center">
+                              <div class="navigate">
+                                Move:
+                                  <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'up')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
+                                      <i class="glyphicon glyphicon-arrow-up"></i>Up
+                                  </button>
+                                  <button ng-click="movePosition(aBMain.menus[selMI].children,$index,'down')" class="btn btn-default" type="button" name="button" ng-show="singleChild(aBMain.menus[selMI])">
+                                      <i class="glyphicon glyphicon-arrow-down"></i>Down
+                                  </button>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                              <button ng-show="mboxFields" type="button" name="button" ng-click="mBoxSett = !mBoxSett" ng-class="{'btn-default':!mBoxSett,'btn-primary':mBoxSett}" class="btn">Edit Settings</button>
                             </div>
                         </div>
                         <!-- MetaBox Settings container START -->
@@ -92,7 +88,7 @@
                             </div>
                         </div>
                         <!-- MetaBox Settings container END -->
-                        <div class="fieldsContainer" ng-show="!mBoxSett" ng-include="'templates/fieldsContainer-0.2.html'">
+                        <div class="fieldsContainer" ng-show="!mBoxSett" ng-include="'templates/fieldsContainer-0.3.html'">
                         </div>
                         <!-- Fields End -->
                         <div class="text-center addField" ng-show="(!mBoxSett && mboxFields)">
