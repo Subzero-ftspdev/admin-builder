@@ -1,5 +1,7 @@
 <div class="col-md-12" ng-init="firstInitLoadProject()">
     <button type="button" ng-click="saveSettings()" name="button" class="btn btn-info btn-lg"><i class="glyphicon glyphicon-floppy-disk"></i> Save </button> - Save current project Settings
+    <button type="button" ng-click="aBClear()" name="button" class="btn btn-primary" style="float:right;">Clear Everything</button>
+
 
     <!--  EDITOR CONTENT START-->
     <div class="row" ng-show="!sShow">
@@ -21,6 +23,9 @@
                         </select>
                       </li>
                     </ul>
+                    <p>
+                      <br>
+                    </p>
                 </div>
                 <button class="btn btn-default editSettings" type="button" name="button" ng-click="editMainSettings(selMI)" ng-show="showEditSettings(selMI)" ng-class="{'btn-primary': menuEditSettShow}">Edit Settings</button>
                 <!-- maincontainer START-->

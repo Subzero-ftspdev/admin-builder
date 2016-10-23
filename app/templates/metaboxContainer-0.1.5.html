@@ -66,7 +66,7 @@
                                 <!-- Name END -->
 
                                 <!-- Context START -->
-                                <div class="input-group" ng-hide="editShow(selMI,'cPage,sidebars,widgets,taxonomies,tinyMCE,restRoutes')">
+                                <div class="input-group" ng-hide="editShow(selMI,'cPage,sidebars,widgets,taxonomies,tinyMCE,restRoutes,customizer,dWidgets')">
                                     <span class="input-group-addon" uib-tooltip="Where the metabox should be positioned on the page. Normal (under content tinyMCE) or side panel (the right).">Context</span>
                                     <select class="form-control" name="context" ng-model="mBox.context">
                                         <option ng-repeat="context in mBContext" value="{{context.value}}">{{context.label}}</option>
@@ -75,7 +75,7 @@
                                 <!-- Context END -->
 
                                 <!-- Priority START -->
-                                <div class="input-group" ng-hide="editShow(selMI,'cPage,sidebars,widgets,taxonomies,tinyMCE,restRoutes')">
+                                <div class="input-group" ng-hide="editShow(selMI,'cPage,sidebars,widgets,taxonomies,tinyMCE,restRoutes,customizer,dWidgets')">
                                     <span class="input-group-addon" uib-tooltip="The importance (position wise) of the meta-box.">Priority</span>
                                     <select class="form-control" name="priority" ng-model="mBox.priority">
                                         <option ng-repeat="priority in mBPriority" value="{{priority.value}}">{{priority.label}}</option>
