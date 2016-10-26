@@ -40,7 +40,7 @@ body #side-panel.dark { background-color: #383838; }
 
 .dark .section,
 .section.dark {
-	background-color: #282828;
+	background-color: rgb(127, 148, 173);
 	border-color: rgba(255,255,255,0.1);
 }
 
@@ -1743,4 +1743,3 @@ body #side-panel.dark #side-panel-trigger-close a {
 	.dark .pricing-box.pricing-extended .pricing-action-area { border-top-color: rgba(255,255,255,0.15); }
 
 }
-
