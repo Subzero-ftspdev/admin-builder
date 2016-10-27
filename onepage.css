@@ -768,7 +768,7 @@ textarea.border-form-control {
 
 @media (max-width: 991px) {
 
-	#logo { height: 70px !important; }
+	#logo { height: 70px !important;}
 
 	#header { min-height: 70px; }
 
@@ -778,7 +778,7 @@ textarea.border-form-control {
 	}
 
 	#header.transparent-header.dark:not(.sticky-header) #header-wrap {
-		background-color: #333;
+		background-color: rgb(127, 148, 173);
 		border-bottom-color: rgba(255,255,255,0.1) !important;
 	}
 
@@ -807,5 +807,10 @@ textarea.border-form-control {
 
 	.dark.overlay-menu #primary-menu:not(.not-dark) ul,
 	.overlay-menu #primary-menu.dark ul { background-color: transparent; }
+
+}
+@media (max-width: 320px) {
+	.dark #header.transparent-header.full-header:not(.sticky-header) #header-wrap:not(.not-dark) #logo, #header.transparent-header.full-header.dark:not(.sticky-header) #header-wrap:not(.not-dark) #logo
+	 {max-width: 80%;}
 
 }
