@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <button class="btn btn-default" ng-click="abGoTo('/projects')" type="button"><i class="glyphicon glyphicon-open"></i> Projects</button>
-                                <button class="settingsButton btn btn-default" ng-class="{active: eShow}" ng-click="contentSwitch(true)" type="button"><i class="glyphicon glyphicon-export"></i>Export</button>
+                                <button class="settingsButton btn btn-default" ng-show="isInPath('/project/')" ng-class="{active: eShow}" ng-click="contentSwitch(true)" type="button"><i class="glyphicon glyphicon-export"></i>Export</button>
                             </div>
                             <div class="col-sm-4 text-center">
                               <img class="mainLogo" src="img/small-ab.png" alt="" />
